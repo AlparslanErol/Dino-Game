@@ -1,7 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="0a7b348b-88e3-448e-9ce5-60ccbed09c43" name="Default Changelist" comment="">
+    <list default="true" id="0a7b348b-88e3-448e-9ce5-60ccbed09c43" name="Default Changelist" comment="Yeni print eklendi">
+      <change afterPath="$PROJECT_DIR$/images/Cactus-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/Cactus-2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/Cactus-3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/Cactus-4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/Cactus-5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/Dino-below-left-up.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/Dino-below-right-up.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/Dino-big-eyes.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/Dino-left-up.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/Dino-right-up.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/Dino-stand-no-eye.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/Dino-stand.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/Ground.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/Sun.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/T-rex Game Components.psd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/company/Ground.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/company/Interface.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/company/Resource.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Main.java" afterDir="false" />
     </list>
@@ -10,18 +46,41 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="hiddenUrls">
+      <set>
+        <option value="https://github.com/sametglmez/Dino-Game.git" />
+      </set>
+    </option>
+  </component>
   <component name="ProjectId" id="1arCRoVuh0afZTZBzzqCgas3T2N" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.company" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true">
@@ -50,11 +109,85 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1587484026527</updated>
-      <workItem from="1587484323007" duration="40000" />
+      <workItem from="1587484323007" duration="2717000" />
+      <workItem from="1587534925589" duration="4428000" />
     </task>
+    <task id="LOCAL-00001" summary="Yeni print eklendi">
+      <created>1587484548619</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1587484548619</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="2" />
+  </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ORDER">
+      <list>
+        <option value="0" />
+        <option value="2" />
+        <option value="3" />
+        <option value="1" />
+      </list>
+    </option>
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="Yeni print eklendi" />
+    <option name="LAST_COMMIT_MESSAGE" value="Yeni print eklendi" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="608" y="148" width="374" height="560" key="#com.intellij.ide.util.MemberChooser" timestamp="1587538251188">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="608" y="148" width="374" height="560" key="#com.intellij.ide.util.MemberChooser/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" timestamp="1587538251188" />
+    <state x="2171" y="118" width="767" height="839" key="CommitChangelistDialog2" timestamp="1587534951903">
+      <screen x="1600" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2171" y="118" width="767" height="839" key="CommitChangelistDialog2/0.0.1600.860/1600.0.1920.1080@1600.0.1920.1080" timestamp="1587534951903" />
+    <state width="1874" height="288" key="GridCell.Tab.0.bottom" timestamp="1587502869142">
+      <screen x="1600" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1874" height="288" key="GridCell.Tab.0.bottom/0.0.1600.860/1600.0.1920.1080@1600.0.1920.1080" timestamp="1587502869142" />
+    <state width="1874" height="288" key="GridCell.Tab.0.center" timestamp="1587502869142">
+      <screen x="1600" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1874" height="288" key="GridCell.Tab.0.center/0.0.1600.860/1600.0.1920.1080@1600.0.1920.1080" timestamp="1587502869142" />
+    <state width="1874" height="288" key="GridCell.Tab.0.left" timestamp="1587502869142">
+      <screen x="1600" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1874" height="288" key="GridCell.Tab.0.left/0.0.1600.860/1600.0.1920.1080@1600.0.1920.1080" timestamp="1587502869142" />
+    <state width="1874" height="288" key="GridCell.Tab.0.right" timestamp="1587502869142">
+      <screen x="1600" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1874" height="288" key="GridCell.Tab.0.right/0.0.1600.860/1600.0.1920.1080@1600.0.1920.1080" timestamp="1587502869142" />
+    <state x="2389" y="252" width="332" height="571" key="RollbackChangesDialog" timestamp="1587485071696">
+      <screen x="1600" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2389" y="252" width="332" height="571" key="RollbackChangesDialog/0.0.1600.860/1600.0.1920.1080@1600.0.1920.1080" timestamp="1587485071696" />
+    <state x="2155" y="275" width="800" height="526" key="Vcs.Push.Dialog.v2" timestamp="1587485153121">
+      <screen x="1600" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2155" y="275" width="800" height="526" key="Vcs.Push.Dialog.v2/0.0.1600.860/1600.0.1920.1080@1600.0.1920.1080" timestamp="1587485153121" />
+    <state x="2365" y="455" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1587484684121">
+      <screen x="1600" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2365" y="455" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1600.860/1600.0.1920.1080@1600.0.1920.1080" timestamp="1587484684121" />
   </component>
 </project>
