@@ -4,12 +4,12 @@ import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.image.BufferedImage;
+import java.awt.image.ImageObserver;
 import java.io.IOException;
 import java.util.ArrayList;
 
-import static com.company.Interface.HEIGHT;
 
-public class Ground extends Canvas {
+public class Ground {
 
     private class GroundImage {
         BufferedImage image;
@@ -17,7 +17,7 @@ public class Ground extends Canvas {
 
         public GroundImage(BufferedImage image, int axis_X) {
             this.image = image;
-            Axis_X = axis_X;
+            this.Axis_X = axis_X;
         }
     }
 
@@ -26,10 +26,10 @@ public class Ground extends Canvas {
     private ArrayList<GroundImage> groundImageList;
 
 
-    public Ground() {
-        Ground_Axis_Y = (int) (HEIGHT - 0.25 * HEIGHT);
+    public Ground(int height) {
+        Ground_Axis_Y = (int) (height - 0.25 * height);
         try {
-            Ground_Image = ImageIO.read(getClass().getResource("/home/samet/Desktop/Dino-Game/images/Ground.png"));
+            Ground_Image = ImageIO.read(getClass().getResource("./images/Ground.png"));
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -42,10 +42,9 @@ public class Ground extends Canvas {
         }
     }
 
-    public void showGround(Graphics graphic){
+    public void showGround(Graphics g){
         for ( int i = 0 ; i < groundImageList.size(); i++){
-            graphic.drawImage(groundImageList.get(i).image,groundImageList.get(i).Axis_X,HEIGHT,null);
+            g.drawImage(groundImageList.get(i).image, groundImageList.get(i).Axis_X, Ground_Axis_Y,null);
         }
     }
-
 }
