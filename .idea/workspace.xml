@@ -20,25 +20,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0a7b348b-88e3-448e-9ce5-60ccbed09c43" name="Default Changelist" comment="Yeni print eklendi">
-      <change afterPath="$PROJECT_DIR$/images/Cactus-1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/Cactus-2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/Cactus-3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/Cactus-4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/Cactus-5.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/Dino-below-left-up.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/Dino-below-right-up.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/Dino-big-eyes.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/Dino-left-up.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/Dino-right-up.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/Dino-stand-no-eye.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/Dino-stand.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/Ground.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/Sun.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/T-rex Game Components.psd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/company/Ground.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/company/Interface.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/company/Resource.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/company/Cactus.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Dino-Game/META-INF/Dino-Game.kotlin_module" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Dino-Game/META-INF/Dino-Game.kotlin_module" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/Interface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Interface.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -83,21 +68,15 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true">
-      <option name="MAIN_CLASS_NAME" value="com.company.Main" />
+    <configuration name="Main" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="com.company.Interface" />
       <module name="Dino-Game" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
       <RunnerSettings RunnerId="Run" />
       <ConfigurationWrapper RunnerId="Run" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Application.Main" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -111,6 +90,8 @@
       <updated>1587484026527</updated>
       <workItem from="1587484323007" duration="2717000" />
       <workItem from="1587534925589" duration="4428000" />
+      <workItem from="1587627667296" duration="1418000" />
+      <workItem from="1587726484212" duration="7092000" />
     </task>
     <task id="LOCAL-00001" summary="Yeni print eklendi">
       <created>1587484548619</created>
@@ -153,30 +134,47 @@
     <option name="LAST_COMMIT_MESSAGE" value="Yeni print eklendi" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="608" y="148" width="374" height="560" key="#com.intellij.ide.util.MemberChooser" timestamp="1587538251188">
-      <screen x="0" y="0" width="1600" height="860" />
+    <state x="2018" y="197" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1587627751347">
+      <screen x="1600" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2018" y="197" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1600.860/1600.0.1920.1080@1600.0.1920.1080" timestamp="1587627751347" />
+    <state x="2330" y="186" width="374" height="560" key="#com.intellij.ide.util.MemberChooser" timestamp="1587756500572">
+      <screen x="1600" y="0" width="1920" height="1080" />
     </state>
     <state x="608" y="148" width="374" height="560" key="#com.intellij.ide.util.MemberChooser/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" timestamp="1587538251188" />
+    <state x="2330" y="186" key="#com.intellij.ide.util.MemberChooser/0.0.1600.860/1600.0.1920.1080@1600.0.1920.1080" timestamp="1587756500572" />
+    <state x="2292" y="331" width="525" height="413" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1587627747723">
+      <screen x="1600" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2292" y="331" width="525" height="413" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1600.860/1600.0.1920.1080@1600.0.1920.1080" timestamp="1587627747723" />
+    <state x="2293" y="288" width="524" height="499" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1587758418076">
+      <screen x="1600" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2293" y="288" width="524" height="499" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1600.860/1600.0.1920.1080@1600.0.1920.1080" timestamp="1587758418076" />
     <state x="2171" y="118" width="767" height="839" key="CommitChangelistDialog2" timestamp="1587534951903">
       <screen x="1600" y="0" width="1920" height="1080" />
     </state>
     <state x="2171" y="118" width="767" height="839" key="CommitChangelistDialog2/0.0.1600.860/1600.0.1920.1080@1600.0.1920.1080" timestamp="1587534951903" />
-    <state width="1874" height="288" key="GridCell.Tab.0.bottom" timestamp="1587502869142">
+    <state x="2343" y="297" width="424" height="482" key="FileChooserDialogImpl" timestamp="1587627697322">
       <screen x="1600" y="0" width="1920" height="1080" />
     </state>
-    <state width="1874" height="288" key="GridCell.Tab.0.bottom/0.0.1600.860/1600.0.1920.1080@1600.0.1920.1080" timestamp="1587502869142" />
-    <state width="1874" height="288" key="GridCell.Tab.0.center" timestamp="1587502869142">
+    <state x="2343" y="297" width="424" height="482" key="FileChooserDialogImpl/0.0.1600.860/1600.0.1920.1080@1600.0.1920.1080" timestamp="1587627697322" />
+    <state width="1874" height="288" key="GridCell.Tab.0.bottom" timestamp="1587759090373">
       <screen x="1600" y="0" width="1920" height="1080" />
     </state>
-    <state width="1874" height="288" key="GridCell.Tab.0.center/0.0.1600.860/1600.0.1920.1080@1600.0.1920.1080" timestamp="1587502869142" />
-    <state width="1874" height="288" key="GridCell.Tab.0.left" timestamp="1587502869142">
+    <state width="1874" height="288" key="GridCell.Tab.0.bottom/0.0.1600.860/1600.0.1920.1080@1600.0.1920.1080" timestamp="1587759090373" />
+    <state width="1874" height="288" key="GridCell.Tab.0.center" timestamp="1587759090373">
       <screen x="1600" y="0" width="1920" height="1080" />
     </state>
-    <state width="1874" height="288" key="GridCell.Tab.0.left/0.0.1600.860/1600.0.1920.1080@1600.0.1920.1080" timestamp="1587502869142" />
-    <state width="1874" height="288" key="GridCell.Tab.0.right" timestamp="1587502869142">
+    <state width="1874" height="288" key="GridCell.Tab.0.center/0.0.1600.860/1600.0.1920.1080@1600.0.1920.1080" timestamp="1587759090373" />
+    <state width="1874" height="288" key="GridCell.Tab.0.left" timestamp="1587759090373">
       <screen x="1600" y="0" width="1920" height="1080" />
     </state>
-    <state width="1874" height="288" key="GridCell.Tab.0.right/0.0.1600.860/1600.0.1920.1080@1600.0.1920.1080" timestamp="1587502869142" />
+    <state width="1874" height="288" key="GridCell.Tab.0.left/0.0.1600.860/1600.0.1920.1080@1600.0.1920.1080" timestamp="1587759090373" />
+    <state width="1874" height="288" key="GridCell.Tab.0.right" timestamp="1587759090373">
+      <screen x="1600" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1874" height="288" key="GridCell.Tab.0.right/0.0.1600.860/1600.0.1920.1080@1600.0.1920.1080" timestamp="1587759090373" />
     <state x="2389" y="252" width="332" height="571" key="RollbackChangesDialog" timestamp="1587485071696">
       <screen x="1600" y="0" width="1920" height="1080" />
     </state>

@@ -3,6 +3,7 @@ package com.company;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.image.ImageObserver;
+import java.io.IOException;
 
 public class Interface {
 
@@ -11,7 +12,7 @@ public class Interface {
     public static int HEIGHT = 500;
 
 
-    public void createWindow(){
+    public void createWindow() throws IOException {
         mainPage.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         Container container = mainPage.getContentPane();
@@ -30,9 +31,8 @@ public class Interface {
 
     }
 
-    public static void main(String[] args) {
-        javax.swing.SwingUtilities.invokeLater(new Runnable() {
-            public void run() { new Interface().createWindow(); }
-        });
+    public static void main(String[] args) throws IOException {
+        Interface deneme = new Interface();
+        deneme.createWindow();
     }
 }

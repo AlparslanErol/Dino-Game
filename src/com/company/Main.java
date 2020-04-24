@@ -4,6 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.io.IOException;
 
 
 class Main extends JPanel implements KeyListener, Runnable {
@@ -16,15 +17,17 @@ class Main extends JPanel implements KeyListener, Runnable {
     private boolean gameOver = false;
 
     Ground ground;
+    Cactus cactus;
 
 
     private int score;
 
-    public Main() {
+    public Main() throws IOException {
         WIDTH = Interface.WIDTH;
         HEIGHT = Interface.HEIGHT;
 
         ground = new Ground(HEIGHT);
+        cactus = new Cactus(WIDTH/2);
 
         score = 0;
 
@@ -37,6 +40,7 @@ class Main extends JPanel implements KeyListener, Runnable {
         g.setFont(new Font("Courier New", Font.BOLD, 25));
         g.drawString(Integer.toString(score), getWidth() / 2 - 5, 100);
         ground.showGround(g);
+        cactus.showCactus(g);
 
     }
 
