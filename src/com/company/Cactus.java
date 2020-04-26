@@ -20,20 +20,30 @@ public class Cactus {
             this.Axis_X = axis_X;
             this.Axis_Y = Axis_Y;
         }
+
+        Rectangle getObstacle() {
+            Rectangle obstacle = new Rectangle();
+            obstacle.x = Axis_X;
+            obstacle.y = Axis_Y;
+            obstacle.width = image.getWidth();
+            obstacle.height = image.getHeight();
+
+            return obstacle;
+        }
     }
 
     public static int Cactus_Axis_X;
     private BufferedImage Cactus_Image;
     private ArrayList<CactusImage> cactusImageList;
     private int interval;
+    private int speed;
 
     public Cactus(int position){
         Cactus_Axis_X = position;
         cactusImageList = new ArrayList<CactusImage>();
         String name = "./images/Cactus-";
-        interval = 50;
-
-
+        interval = 500;
+        speed = 15;
 
         for(int i = 0 ; i < 5 ; i++){
             name = name + (i+1) + ".png";
@@ -54,7 +64,22 @@ public class Cactus {
 
     public void showCactus(Graphics g){
         for ( int i = 0 ; i < cactusImageList.size(); i++){
+            g.setColor(Color.black);
             g.drawImage(cactusImageList.get(i).image, cactusImageList.get(i).Axis_X, cactusImageList.get(i).Axis_Y,null);
         }
     }
+
+    public void update(){
+        for (int i = 0 ; i < cactusImageList.size() ; i++){
+            cactusImageList.get(i).Axis_X -= speed;
+        }
+        if(cactusImageList.get(0).Axis_X < -cactusImageList.get(0).image.getWidth()){
+            CactusImage temp = new CactusImage(cactusImageList.get(0).image,cactusImageList.get(0).Axis_X,cactusImageList.get(0).Axis_Y);
+            temp.Axis_X = cactusImageList.get(cactusImageList.size()-1).Axis_X + interval;
+            cactusImageList.remove(0);
+            cactusImageList.add(temp);
+        }
+
+    }
+
 }

@@ -27,7 +27,7 @@ class Main extends JPanel implements KeyListener, Runnable {
         HEIGHT = Interface.HEIGHT;
 
         ground = new Ground(HEIGHT);
-        cactus = new Cactus(WIDTH/2);
+        cactus = new Cactus(WIDTH*2);
 
         score = 0;
 
@@ -84,6 +84,8 @@ class Main extends JPanel implements KeyListener, Runnable {
 
     public void updateGame() {
         score += 1;
+        cactus.update();
+        ground.update();
     }
     public void reset() {
         score = 0;
