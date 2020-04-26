@@ -45,9 +45,9 @@ public class Player {
         dinoUpY = reference;
 
         try {
-            jumpSound =  Applet.newAudioClip(new URL("file","","images/jump.wav"));
-            deadSound =  Applet.newAudioClip(new URL("file","","images/dead.wav"));
-            scoreUpSound =  Applet.newAudioClip(new URL("file","","images/scoreup.wav"));
+            jumpSound =  Applet.newAudioClip(new URL("file","","./images/jump.wav"));
+            deadSound =  Applet.newAudioClip(new URL("file","","./images/dead.wav"));
+            scoreUpSound =  Applet.newAudioClip(new URL("file","","./images/scoreup.wav"));
         } catch (MalformedURLException e) {
             e.printStackTrace();
         }

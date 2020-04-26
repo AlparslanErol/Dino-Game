@@ -33,8 +33,8 @@ class Main extends JPanel implements KeyListener, Runnable {
         HEIGHT = Interface.HEIGHT;
 
         ground = new Ground(HEIGHT);
-        cactus = new Cactus(WIDTH*2);
         dino = new Player();
+        cactus = new Cactus(WIDTH*2, dino);
 
         gameOverButtonImage = new Resource().getResourceImage("./images/gameover_text.png");
         replayButtonImage = new Resource().getResourceImage("./images/replay_button.png");
@@ -119,6 +119,7 @@ class Main extends JPanel implements KeyListener, Runnable {
 
     public void reset() {
         System.out.println("reset");
+        cactus.reset();
     }
 
     public void startGame() {

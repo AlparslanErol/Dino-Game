@@ -33,10 +33,12 @@ public class Cactus {
     public static int Cactus_Axis_X;
     private BufferedImage Cactus_Image;
     private ArrayList<CactusImage> cactusImageList;
+    private Player dino;
     private int interval;
     private int speed;
 
-    public Cactus(int position){
+    public Cactus(int position, Player dino){
+        this.dino = dino;
         Cactus_Axis_X = position;
         cactusImageList = new ArrayList<CactusImage>();
         String name = "./images/Cactus-";
@@ -66,6 +68,11 @@ public class Cactus {
     }
 
     public boolean isCollision() {
+        for (int i = 0; i < cactusImageList.size(); i++){
+            if (dino.getDino().intersects(cactusImageList.get(i).getObstacle())){
+                return true;
+            }
+        }
         return false;
     }
 
@@ -79,7 +86,9 @@ public class Cactus {
             cactusImageList.remove(0);
             cactusImageList.add(temp);
         }
-
+    }
+    public void reset() {
+        
     }
 
 }
