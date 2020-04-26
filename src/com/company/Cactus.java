@@ -8,8 +8,6 @@ import java.util.ArrayList;
 
 public class Cactus {
 
-
-
     private class CactusImage {
         BufferedImage image;
         int Axis_X;
@@ -47,8 +45,6 @@ public class Cactus {
 
         for(int i = 0 ; i < 5 ; i++){
             name = name + (i+1) + ".png";
-            System.out.println("-----------> " + name);
-
             try {
                 Cactus_Image = ImageIO.read(getClass().getResource(name));
             } catch (IOException e) {

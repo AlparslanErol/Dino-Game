@@ -2,26 +2,27 @@ package com.company;
 
 import java.applet.Applet;
 import java.applet.AudioClip;
+import java.awt.Graphics;
+import java.awt.Rectangle;
 import java.awt.image.BufferedImage;
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.awt.Graphics;
-import java.awt.Rectangle;
 
 public class Player {
 
-    public static final int STAND_STILL = 1,
-                            RUNNING = 2,
-                            JUMPING = 3,
-                            DIE = 4;
+    private static final int STAND_STILL = 1;
+    private static final int RUNNING = 2;
+    private static final int JUMPING = 3;
+    private static final int DIE = 4;
+    private int state = STAND_STILL;
 
-    private static int state = STAND_STILL;
-    private static int ground;
-    private static int dinoUpY, dinoLeftX;
+    private float dinoUpY;
+    private float dinoLeftX;
     private float speedX;
     private float speedY;
 
     private Rectangle rect;
+    public static int reference;
     public int score = 0;
 
     private static Animation running;
@@ -33,7 +34,6 @@ public class Player {
     private AudioClip scoreUpSound;
 
     public Player() {
-
         rect = new Rectangle();
         running = new Animation(90);
         running.addFrame(new Resource().getResourceImage("./images/main-character1.png"));
@@ -41,13 +41,13 @@ public class Player {
         jumping = new Resource().getResourceImage("./images/main-character3.png");
         death = new Resource().getResourceImage("./images/main-character4.png");
         dinoLeftX = 50;
-        ground = Ground.Ground_Axis_Y - jumping.getHeight() + 5; //give up pixel of dino
-        dinoUpY = ground;
+        reference = Ground.Ground_Axis_Y - jumping.getHeight() + 5; //give up pixel of dino
+        dinoUpY = reference;
 
         try {
-            jumpSound =  Applet.newAudioClip(new URL("file","","./images/jump.wav"));
-            deadSound =  Applet.newAudioClip(new URL("file","","./images/dead.wav"));
-            scoreUpSound =  Applet.newAudioClip(new URL("file","","./images/scoreup.wav"));
+            jumpSound =  Applet.newAudioClip(new URL("file","","images/jump.wav"));
+            deadSound =  Applet.newAudioClip(new URL("file","","images/dead.wav"));
+            scoreUpSound =  Applet.newAudioClip(new URL("file","","images/scoreup.wav"));
         } catch (MalformedURLException e) {
             e.printStackTrace();
         }
@@ -56,54 +56,58 @@ public class Player {
     public void showPlayer(Graphics g) {
         switch(state) {
             case STAND_STILL:
-                g.drawImage(jumping, dinoLeftX, dinoUpY, null);
+                g.drawImage(jumping, (int) dinoLeftX, (int) dinoUpY, null);
                 break;
             case RUNNING:
-                g.drawImage(running.getFrame(), dinoLeftX, dinoUpY, null);
+                g.drawImage(running.getFrame(), (int) dinoLeftX, (int) dinoUpY, null);
                 break;
             case JUMPING:
-                g.drawImage(jumping, dinoLeftX, dinoUpY, null);
+                g.drawImage(jumping, (int) dinoLeftX, (int) dinoUpY, null);
+                break;
             case DIE:
-                g.drawImage(death, dinoLeftX, dinoUpY, null);
+                g.drawImage(death, (int) dinoLeftX, (int) dinoUpY, null);
                 break;
         }
     }
 
     public void update() {
         running.updateFrame();
-        if(dinoUpY >= ground) {
-            dinoUpY = ground;
+        if(dinoUpY >= reference) {
             state = RUNNING;
         } else {
-            speedY += 0.4f;
+            speedY += 0.35f;
             dinoUpY += speedY;
         }
     }
 
     public void jump() {
-        if(dinoUpY >= ground) {
-            if(jumpSound != null) {
-                jumpSound.play();
-                System.out.println("asdasd");
-            }
-            speedY = -7.5f;
-            dinoUpY += speedY;
-            state = JUMPING;
+        if(jumpSound != null) {
+            playJumpSound();
+            System.out.println("asdasd");
         }
+        speedY = -7.5f;
+        dinoUpY += speedY;
+        state = JUMPING;
     }
 
-    public void die() {
-        state = DIE;
+    public void playJumpSound() {
+        jumpSound.play();
     }
 
     public void playDeadSound() {
         deadSound.play();
     }
 
+    public void die() {
+        state = DIE;
+    }
+
+
+
     public Rectangle getDino() {
         rect = new Rectangle();
-        rect.x = dinoLeftX;
-        rect.y = dinoUpY;
+        rect.x = (int) dinoLeftX;
+        rect.y = (int) dinoUpY;
         rect.width = running.getFrame().getWidth();
         rect.height = running.getFrame().getHeight();
         return rect;
