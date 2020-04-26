@@ -1,38 +1,35 @@
 package com.company;
 
-import javax.swing.*;
-import java.awt.*;
-import java.awt.image.ImageObserver;
-import java.io.IOException;
+import javax.swing.JFrame;
 
-public class Interface {
+public class Interface extends JFrame {
 
-    JFrame mainPage = new JFrame("DINOOO - GAAMEE");
     public static int WIDTH = 800;
     public static int HEIGHT = 500;
+    private Main general;
 
 
-    public void createWindow() throws IOException {
-        mainPage.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    public Interface() {
+        super("DINO - GAME");
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setSize(WIDTH,HEIGHT);
+        setLocation(400,200);
+        setResizable(true);
 
-        Container container = mainPage.getContentPane();
 
-        Main general = new Main();
-        general.addKeyListener(general);
-        general.setFocusable(true);
-
-        container.setLayout(new BorderLayout());
-
-        container.add(general, BorderLayout.CENTER);
-
-        mainPage.setSize(WIDTH, HEIGHT);
-        mainPage.setResizable(false);
-        mainPage.setVisible(true);
-
+        general = new Main();
+        addKeyListener(general);
+        add(general);
+        setFocusable(true);
     }
 
-    public static void main(String[] args) throws IOException {
-        Interface deneme = new Interface();
-        deneme.createWindow();
+    public void startGame() {
+        setVisible(true);
+        general.startGame();
+    }
+
+    public static void main(String[] args) {
+        Interface frame = new Interface();
+        frame.startGame();
     }
 }

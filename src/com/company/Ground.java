@@ -52,7 +52,7 @@ public class Ground {
         Iterator<GroundImage> loop = groundImageList.iterator();
         GroundImage firstOne = loop.next();
 
-        firstOne.Axis_X -= 15;
+        firstOne.Axis_X -= 5;
 
         int previos = firstOne.Axis_X;
 

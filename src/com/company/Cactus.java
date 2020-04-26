@@ -1,7 +1,5 @@
 package com.company;
 
-import com.company.Ground;
-
 import javax.imageio.ImageIO;
 import java.awt.*;
 import java.awt.image.BufferedImage;
@@ -9,6 +7,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class Cactus {
+
+
 
     private class CactusImage {
         BufferedImage image;
@@ -43,7 +43,7 @@ public class Cactus {
         cactusImageList = new ArrayList<CactusImage>();
         String name = "./images/Cactus-";
         interval = 500;
-        speed = 15;
+        speed = 5;
 
         for(int i = 0 ; i < 5 ; i++){
             name = name + (i+1) + ".png";
@@ -67,6 +67,10 @@ public class Cactus {
             g.setColor(Color.black);
             g.drawImage(cactusImageList.get(i).image, cactusImageList.get(i).Axis_X, cactusImageList.get(i).Axis_Y,null);
         }
+    }
+
+    public boolean isCollision() {
+        return false;
     }
 
     public void update(){
