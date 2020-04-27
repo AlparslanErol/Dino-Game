@@ -46,6 +46,8 @@ class Main extends JPanel implements KeyListener, Runnable {
         super.paint(g);
         g.setFont(new Font("Courier New", Font.BOLD, 25));
         g.drawString("SCORE = " + dino.score, getWidth()/2 - 70, getHeight()/4);
+        g.setFont(new Font("Courier New", Font.BOLD, 15));
+        g.drawString("High Score  = " + dino.high_score, getWidth()/2 + 200, getHeight()/4);
 
         switch (gameState) {
             case START_GAME_STATE:
@@ -117,6 +119,10 @@ class Main extends JPanel implements KeyListener, Runnable {
                 dino.playDeadSound();
                 gameState = GAME_OVER_STATE;
                 dino.die();
+                if(dino.score > dino.high_score){
+                    dino.high_score = dino.score;
+                    dino.changeHighScore(String.valueOf(dino.score));
+                }
             }
         }
     }
