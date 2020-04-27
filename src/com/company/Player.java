@@ -12,9 +12,9 @@ public class Player {
 
     private static final int STAND_STILL = 1;
     private static final int RUNNING = 2;
-    private static final int JUMPING = 3;
+    public static final int JUMPING = 3;
     private static final int DIE = 4;
-    private int state = STAND_STILL;
+    public int state = STAND_STILL;
 
     private float dinoUpY;
     private float dinoLeftX;
@@ -56,7 +56,7 @@ public class Player {
     public void showPlayer(Graphics g) {
         switch(state) {
             case STAND_STILL:
-                g.drawImage(jumping, (int) dinoLeftX, (int) dinoUpY, null);
+                g.drawImage(jumping, (int) dinoLeftX, reference, null);
                 break;
             case RUNNING:
                 g.drawImage(running.getFrame(), (int) dinoLeftX, (int) dinoUpY, null);
@@ -102,8 +102,6 @@ public class Player {
         state = DIE;
     }
 
-
-
     public Rectangle getDino() {
         rect = new Rectangle();
         rect.x = (int) dinoLeftX;
@@ -120,8 +118,8 @@ public class Player {
         }
     }
 
-    public void startRunning() {
-        state = RUNNING;
+    public void reset() {
+        state = STAND_STILL;
     }
 
     private class DinoImages {

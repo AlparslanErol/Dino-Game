@@ -31,6 +31,7 @@ public class Cactus {
     }
 
     public static int Cactus_Axis_X;
+    public static int cactus_Reference;
     private BufferedImage Cactus_Image;
     private ArrayList<CactusImage> cactusImageList;
     private Player dino;
@@ -40,6 +41,7 @@ public class Cactus {
     public Cactus(int position, Player dino){
         this.dino = dino;
         Cactus_Axis_X = position;
+        cactus_Reference = Cactus_Axis_X;
         cactusImageList = new ArrayList<CactusImage>();
         String name = "./images/Cactus-";
         interval = 500;
@@ -88,7 +90,23 @@ public class Cactus {
         }
     }
     public void reset() {
-        
+        cactusImageList.clear();
+        Cactus_Axis_X = cactus_Reference;
+        String name = "./images/Cactus-";
+        for(int i = 0 ; i < 5 ; i++){
+            name = name + (i+1) + ".png";
+            try {
+                Cactus_Image = ImageIO.read(getClass().getResource(name));
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+            CactusImage obj = new CactusImage(Cactus_Image,Cactus_Axis_X,Ground.Ground_Axis_Y - Cactus_Image.getHeight() + 5);
+            cactusImageList.add(obj);
+            Cactus_Axis_X += interval;
+            name = "./images/Cactus-";
+        }
+
     }
 
 }

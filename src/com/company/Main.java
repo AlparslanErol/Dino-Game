@@ -7,6 +7,8 @@ import java.awt.image.BufferedImage;
 
 import javax.swing.JPanel;
 
+import static com.company.Player.JUMPING;
+
 
 class Main extends JPanel implements KeyListener, Runnable {
 
@@ -90,7 +92,8 @@ class Main extends JPanel implements KeyListener, Runnable {
                     gameState = GAME_PLAYING_STATE;
                     break;
                 case GAME_PLAYING_STATE:
-                    dino.jump();
+                    if(dino.state != JUMPING)
+                        dino.jump();
                     break;
                 case GAME_OVER_STATE:
                     gameState = START_GAME_STATE;
@@ -109,6 +112,7 @@ class Main extends JPanel implements KeyListener, Runnable {
             ground.update();
             dino.update();
             cactus.update();
+            dino.upScore();
             if (cactus.isCollision()) {
                 dino.playDeadSound();
                 gameState = GAME_OVER_STATE;
@@ -120,6 +124,8 @@ class Main extends JPanel implements KeyListener, Runnable {
     public void reset() {
         System.out.println("reset");
         cactus.reset();
+        dino.reset();
+        dino.score = 0;
     }
 
     public void startGame() {
