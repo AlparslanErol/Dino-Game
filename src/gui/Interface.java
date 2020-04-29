@@ -20,11 +20,9 @@ public class Interface extends JFrame {
         setLocation(400,200);
         setResizable(true);
 
-
         manager = new Main();
         addKeyListener(manager);
         add(manager);
-        setFocusable(true);
     }
 
     public void startGame() {

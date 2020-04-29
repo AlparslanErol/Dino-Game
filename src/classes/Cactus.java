@@ -92,9 +92,7 @@ public class Cactus {
         String name = "images/Cactus-";
         for(int i = 0 ; i < 5 ; i++){
             name = name + (i+1) + ".png";
-            
             Cactus_Image = Resource.getResourceImage(name);
-
             CactusImage obj = new CactusImage(Cactus_Image,Cactus_Axis_X,Ground.Ground_Axis_Y - Cactus_Image.getHeight() + 5);
             cactusImageList.add(obj);
             Cactus_Axis_X += rand_interval;

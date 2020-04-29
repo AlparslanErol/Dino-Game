@@ -24,7 +24,6 @@ public class Ground {
     private BufferedImage Ground_Image;
     private ArrayList<GroundImage> groundImageList;
 
-
     public Ground(int height) {
         Ground_Axis_Y = (int) (height - 0.25 * height);
         
@@ -46,9 +45,7 @@ public class Ground {
     public void update(){
         Iterator<GroundImage> loop = groundImageList.iterator();
         GroundImage firstOne = loop.next();
-
         firstOne.Axis_X -= 5;
-
         int previos = firstOne.Axis_X;
 
         while(loop.hasNext()){

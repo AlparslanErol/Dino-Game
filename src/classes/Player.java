@@ -52,7 +52,6 @@ public class Player {
         reference = Ground.Ground_Axis_Y - jumping.getHeight() + 5; //give up pixel of dino
         dinoUpY = reference;
 
-
         System.out.println(tempFile.toString());
         boolean exists = tempFile.exists();
         System.out.println(exists);
