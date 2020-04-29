@@ -5,6 +5,7 @@ import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Random;
 
 public class Cactus {
 
@@ -35,7 +36,6 @@ public class Cactus {
     private BufferedImage Cactus_Image;
     private ArrayList<CactusImage> cactusImageList;
     private Player dino;
-    private int interval;
     private int speed;
 
     public Cactus(int position, Player dino){
@@ -44,7 +44,6 @@ public class Cactus {
         cactus_Reference = Cactus_Axis_X;
         cactusImageList = new ArrayList<CactusImage>();
         String name = "./images/Cactus-";
-        interval = 500;
         speed = 5;
 
         for(int i = 0 ; i < 5 ; i++){
@@ -57,7 +56,7 @@ public class Cactus {
 
             CactusImage obj = new CactusImage(Cactus_Image,Cactus_Axis_X,Ground.Ground_Axis_Y - Cactus_Image.getHeight() + 5);
             cactusImageList.add(obj);
-            Cactus_Axis_X += interval;
+            Cactus_Axis_X += (int)(Math.random()*((900-400)+1))+400;
             name = "./images/Cactus-";
         }
     }
@@ -79,17 +78,19 @@ public class Cactus {
     }
 
     public void update(){
+        int rand_interval = (int)(Math.random()*((900-400)+1))+400;
         for (int i = 0 ; i < cactusImageList.size() ; i++){
             cactusImageList.get(i).Axis_X -= speed;
         }
         if(cactusImageList.get(0).Axis_X < -cactusImageList.get(0).image.getWidth()){
             CactusImage temp = new CactusImage(cactusImageList.get(0).image,cactusImageList.get(0).Axis_X,cactusImageList.get(0).Axis_Y);
-            temp.Axis_X = cactusImageList.get(cactusImageList.size()-1).Axis_X + interval;
+            temp.Axis_X = cactusImageList.get(cactusImageList.size()-1).Axis_X + rand_interval;
             cactusImageList.remove(0);
             cactusImageList.add(temp);
         }
     }
     public void reset() {
+        int rand_interval = (int)(Math.random()*((900-400)+1))+400;
         cactusImageList.clear();
         Cactus_Axis_X = cactus_Reference;
         String name = "./images/Cactus-";
@@ -103,7 +104,7 @@ public class Cactus {
 
             CactusImage obj = new CactusImage(Cactus_Image,Cactus_Axis_X,Ground.Ground_Axis_Y - Cactus_Image.getHeight() + 5);
             cactusImageList.add(obj);
-            Cactus_Axis_X += interval;
+            Cactus_Axis_X += rand_interval;
             name = "./images/Cactus-";
         }
 

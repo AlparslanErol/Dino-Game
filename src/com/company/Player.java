@@ -1,5 +1,6 @@
 package com.company;
 
+import javax.sound.sampled.AudioInputStream;
 import java.applet.Applet;
 import java.applet.AudioClip;
 import java.awt.Graphics;
@@ -80,8 +81,6 @@ public class Player {
                 e.printStackTrace();
             }
         }
-
-
 
         try {
             jumpSound =  Applet.newAudioClip(new URL("file","","./images/jump.wav"));
