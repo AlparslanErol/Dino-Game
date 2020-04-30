@@ -6,6 +6,10 @@ import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 
 
+/**
+ * @author ALPARSLAN
+ *
+ */
 public class Cactus {
 
     private class CactusImage {
@@ -13,7 +17,7 @@ public class Cactus {
         int Axis_X;
         int Axis_Y;
 
-        public CactusImage(BufferedImage image, int axis_X,int Axis_Y) {
+        public CactusImage(BufferedImage image, int axis_X, int Axis_Y) {
             this.image = image;
             this.Axis_X = axis_X;
             this.Axis_Y = Axis_Y;
@@ -73,7 +77,7 @@ public class Cactus {
     }
 
     public void update(){
-        int rand_interval = 200 + (int)(Math.random() * ((400 - 200) + 1));
+        int rand_interval = 250 + (int)(Math.random() * ((600 - 250) + 1));
         for (int i = 0 ; i < cactusImageList.size() ; i++){
             cactusImageList.get(i).Axis_X -= speed;
         }
