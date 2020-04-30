@@ -86,7 +86,7 @@ public class Main extends JPanel implements KeyListener, Runnable {
     public void paint(Graphics g) {
         super.paint(g); //Call upper class paint method.
         g.setFont(new Font("Courier New", Font.BOLD, 15));
-        g.drawString("PRESS L BUTTON TO QUIT", 10,20);
+        g.drawString("QUIT -> Q", 10,20);
         g.drawString("SCORE = " + dino.score, getWidth()/2 + 200, getHeight()/4-25);
         g.drawString("High Score  = " + dino.high_score, getWidth()/2 + 200, getHeight()/4);
 
@@ -183,7 +183,7 @@ public class Main extends JPanel implements KeyListener, Runnable {
             }
         }
         if (gameState == GAME_OVER_STATE)
-            if (e.getKeyCode() == KeyEvent.VK_L) {
+            if (e.getKeyCode() == KeyEvent.VK_Q) {
                 stopGame();
             }
     }

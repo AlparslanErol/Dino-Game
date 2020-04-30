@@ -34,7 +34,7 @@ import pack.Resource;
  *
  * TO KEEP PLAYER IMAGES ON DIFFERENT SITUATION,
  * @code BufferedImage class is used. By the way, left & right foot images are animated by using...
- * @code Animation(delta time) class in package 'pack'.
+ * @code Animation(delta time) class in package 'pack'. Using with Resource class to read BufferedImage type images.
  * This class has parameter delta time. And update another image by checking
  * system time has enough delta time.
  * updateFrame() method is called in thread, if enough delta time detected => nextImage.
@@ -55,8 +55,8 @@ public class Player {
     public int state = STAND_STILL;
 
     // PLAYER LOCALIZATION AND SPEED CONFIGS
-    private float dinoUpY;
-    private float dinoLeftX;
+    private float dinoUpY; // Only this localization param is changing while updating thread. Be careful about updating this.
+    private float dinoLeftX; // only for initialization. Dino Left X-Axis is constant. Because player can only move up and down!
     private float speedY;
     private Rectangle rect;
     public static int reference; // KEEP INITIAL POSITION OF PLAYER BY USING IN reset() method.
@@ -94,6 +94,8 @@ public class Player {
         rect = new Rectangle();
 
         // Animation Configs
+        // add.Frame BufferedImage Type Image by using Resource class method
+        // Animation has create a new BufferedImage Type Array inside.
         running = new Animation(90);
         running.addFrame(Resource.getResourceImage("images/main-character1.png"));
         running.addFrame(Resource.getResourceImage("images/main-character2.png"));
@@ -257,6 +259,10 @@ public class Player {
      * This method is invoked from Cactus Class isCollision() method when...
      * Keeping Rect object of Player and Cactus has been collided.
      * @code Rectangle intersect() method has been used.
+     *
+     * When we update player every single thread iteration,
+     * Only dinoUpY may change, because player can only move up and down. So dinoLeftX is constant.
+     * While updating dinoUpY, it is enough to keep dino localization. Because x frame is constant and we know current frame drawn in each time.
      *
      * NO INPUT PARAMETER
      * @return
