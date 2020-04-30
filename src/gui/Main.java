@@ -10,34 +10,45 @@ import classes.Cactus;
 import classes.Ground;
 import classes.Player;
 
-
+/**
+ * @author ALPARSLAN
+ *
+ * MAIN CLASS ==> Engine of the Dinosaur Game
+ * MAIN CLASS has inheritance from...
+ * @code JPanel class => one of the subclass of the Component => Container => JComponent
+ *
+ * MAIN CLASS has used and call override methods from...
+ * @code KeyListener => Has key methods to override.
+ * @code Runnable => Has method run() which also used from Thread. By the thread object we can implement interface.
+ *
+ * Main class HAS 3 Subclasses : CACTUS, GROUND, PLAYER
+ * Main class HAS THREAD class with thread object.
+ * Input images identified as BufferedImage class type to read them as BufferedImage type later.
+ *
+ * Game has 3 Stage:
+ * 1.) Start Game Stage    : In this stage, dino does not run. Position just before the running start. (INITIAL)
+ * 2.) Game Playing State  : In this stage, dino is running relatively :)
+ * 3.) Game Over Stage     : Every thread, program checks the collision between dino and cactus with a reference of
+ *                           Rectangle Class. If it is the case pursuing this stage with stop running.
+ */
 public class Main extends JPanel implements KeyListener, Runnable {
 
-    /**
-     * MAIN CLASS ==> Engine of the Dinosaur Game
-     *
-     * Main class HAS 3 Subclasses : CACTUS, GROUND, PLAYER
-     * Main class HAS THREAD class with thread object.
-     * Input images identified as BufferedImage class type to read them as BufferedImage type later.
-     *
-     * Game has 3 Stage:
-     * 1.) Start Game Stage    : In this stage, dino does not run. Position just before the running start. (INITIAL)
-     * 2.) Game Playing State  : In this stage, dino is running relatively :)
-     * 3.) Game Over Stage     : Every thread, program checks the collision between dino and cactus with a reference of
-     *                           Rectangle Class. If it is the case pursuing this stage with stop running.
-     */
+    // MAIN WINDOW CONFIGS
 	private static final long serialVersionUID = 1L;
 	public static int WIDTH;
     public static int HEIGHT;
 
+    // MAIN GAME STATE CONFIGS
     private static final int START_GAME_STATE = 0;
     private static final int GAME_PLAYING_STATE = 1;
     private static final int GAME_OVER_STATE = 2;
     private int gameState = START_GAME_STATE;
 
+    // MAIN GAME_OVER_STATE IMAGES CONFIGS
     private BufferedImage replayButtonImage;
     private BufferedImage gameOverButtonImage;
 
+    // MAIN ASSOCIATED AND INHERITED CLASSES CONFIGS
     private Thread thread;
     private Ground ground;
     private Cactus cactus;
@@ -67,15 +78,19 @@ public class Main extends JPanel implements KeyListener, Runnable {
      * By calling repaint in run() method calls this method for every single iteration in thread. So we are allowed
      * to update drawing image in the window in every thread iteration with specified sleep time.
      *
+     * Overridden from JComponent class.
+     *
      * @param g
      */
+    @Override
     public void paint(Graphics g) {
-        super.paint(g);
+        super.paint(g); //Call upper class paint method.
         g.setFont(new Font("Courier New", Font.BOLD, 15));
         g.drawString("PRESS L BUTTON TO QUIT", 10,20);
         g.drawString("SCORE = " + dino.score, getWidth()/2 + 200, getHeight()/4-25);
         g.drawString("High Score  = " + dino.high_score, getWidth()/2 + 200, getHeight()/4);
 
+        // CHECK GAME_STATE AND DECIDE PAINT PROCESS
         switch (gameState) {
             case START_GAME_STATE:
                 dino.showPlayer(g);
@@ -99,11 +114,13 @@ public class Main extends JPanel implements KeyListener, Runnable {
         }
     }
 
+
     /**
      * Overridden method run() from Interface Runnable
      * Thread class also implements runnable interface which means Thread itself has an override run() method.
      * So we are allowed to use Thread class into Runnable run() method.
      * This method is called for every single iteration.
+     * Every single iteration has delta time as 10 milliseconds
      *
      * @code updateGame() ==> In every thread we control and trigger Main class method updateGame() to Up Date our game.
      * @code repaint() ==> This method is overridden inherited from JPanel but also from COMPONENT class to Update Graphics ==> paint(Graphics g)
@@ -115,12 +132,13 @@ public class Main extends JPanel implements KeyListener, Runnable {
             updateGame(); //Main class method
             repaint(); // Inherited from JPanel ==> COMPONENT
             try {
-                Thread.sleep(10);
+                Thread.sleep(10); // DELTA TIME BETWEEN THREAD ITERATIONS
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
         }
     }
+
 
     /**
      * This method is overridden from...
@@ -133,6 +151,7 @@ public class Main extends JPanel implements KeyListener, Runnable {
 
     }
 
+
     /**
      * This method is overridden from...
      * @code KeyListener interface.
@@ -142,6 +161,8 @@ public class Main extends JPanel implements KeyListener, Runnable {
      * - IF IN START_GAME_STATE AND PRESSED ' ' => Dino stars running and GAME_STATE => GAME_PLAYING_STATE
      * - IF IN GAME_PLAYING_STATE AND PRESSED ' ' => Dino jumps and no state change
      * - IF IN GAME_OVER_STATE AND PRESSED ' ' => Dino has initial posiiton and GAME_STATE => START_GAME_STATE
+     *
+     * - IF IN GAME_OVER_STATE AND PRESSED 'L' => Dino Game has been closed by System with stopGame() method.
      * @param e -- any key
      */
     @Override
@@ -161,10 +182,12 @@ public class Main extends JPanel implements KeyListener, Runnable {
                     break;
             }
         }
-        if (e.getKeyCode() == KeyEvent.VK_L) {
-            stopGame();
-        }
+        if (gameState == GAME_OVER_STATE)
+            if (e.getKeyCode() == KeyEvent.VK_L) {
+                stopGame();
+            }
     }
+
 
     /**
      * This method is overridden from...
@@ -175,12 +198,17 @@ public class Main extends JPanel implements KeyListener, Runnable {
     @Override
     public void keyReleased(KeyEvent e) { }
 
+
     /**
      * Method for Main class.
      * Has no parameter and no return
      * This method updates game process but to make it every single thread (iteration)...
      * This method is called from...
      * @code overridden run() method. So we are allowed to update game process in every single thread iteration.
+     *
+     * If any collision detected between player and obstacle, dino has sound, GAME_STATE => GAME_OVER_STATE and...
+     * Check if the current score obtained by user is bigger than the best score keeping in .txt file...
+     * If it is the case, update value in the file, if not continue.
      */
     public void updateGame() {
         if (gameState == GAME_PLAYING_STATE) {
@@ -200,6 +228,7 @@ public class Main extends JPanel implements KeyListener, Runnable {
         }
     }
 
+
     /**
      * Method for Main class.
      * Has no input parameter and no return.
@@ -212,6 +241,7 @@ public class Main extends JPanel implements KeyListener, Runnable {
         dino.score = 0;
         dino.counter = 0;
     }
+
 
     /**
      * @code startGame()

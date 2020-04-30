@@ -2,14 +2,17 @@ package gui;
 
 import javax.swing.JFrame;
 
+/**
+ * @author ALPARSLAN
+ *
+ * Top class of this game which extends...
+ * @code JFrame class => One of the subclass of Component=> Container => Window
+ * General specification of the game window are held in this class.
+ * Interface class HAS An another class that suppose to the game engine.
+ * HAS Main class with an object of 'manager'.
+ */
 public class Interface extends JFrame {
 
-    /**
-     * Top class of this game which extends JFrame class.
-     * General specification of the game window are held in this class.
-     * Interface class HAS An another class that suppose to the game engine.
-     * HAS Main class with an object of 'manager'.
-     */
 	private static final long serialVersionUID = 1L;
 	public static int WIDTH = 800;
     public static int HEIGHT = 500;
